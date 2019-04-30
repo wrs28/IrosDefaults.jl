@@ -19,10 +19,12 @@ const N_CUBIC = 10
 const N_QUADRATIC = 6
 const N_BILINEAR = 4
 const N_LINEAR = 3
+
 #
 const NNN_BULK = N_CUBIC # number of nearest neighbors used in bulk
 const NNN_SURFACE = N_QUADRATIC # number of nearest neighbors for surface
 const NNN_CORNER = N_QUADRATIC # number of nearest neighbors at corners
+
 
 # for plotting
 const SHAPE_FILL_ALPHA = .2
@@ -37,7 +39,8 @@ const BOUNDARY_BC_COLOR = :black
 const MARKERSHAPE = :rect
 const LINK_SCALE_REDUCTION = 1/2
 const MARKERSIZE_SCALE = 135
-
+const PLOT_QUANTILE = .95 # optimize the dynamic range of plotting wavefunctions to cover this percentile
+const PLOT_SCALE_FUDGE = 1.3 # multiply plot_quantile result by this factor to get colorbar scale
 
 
 export EXTINCTION,
@@ -61,6 +64,8 @@ BOUNDARY_FLOQUET_MATCHED_LINETYPE,
 BOUNDARY_BC_COLOR,
 MARKERSIZE_SCALE,
 LINK_SCALE_REDUCTION,
-MARKERSHAPE
+MARKERSHAPE,
+PLOT_QUANTILE,
+PLOT_SCALE_FUDGE
 
 end
